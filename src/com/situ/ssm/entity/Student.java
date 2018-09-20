@@ -1,12 +1,13 @@
 package com.situ.ssm.entity;
 
-import java.io.Serializable;
-
-public class Student implements Serializable {
+public class Student {
 	private Integer id;
 	private String name;
 	private Integer age;
 	private String gender;
+	// 一个学生属于一个班级，一对一关系
+	// private Integer banjiId;
+	private Banji banji;
 
 	public Integer getId() {
 		return id;
@@ -40,9 +41,18 @@ public class Student implements Serializable {
 		this.gender = gender;
 	}
 
+	public Banji getBanji() {
+		return banji;
+	}
+
+	public void setBanji(Banji banji) {
+		this.banji = banji;
+	}
+
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", gender=" + gender + "]";
+		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", gender=" + gender + ", banji=" + banji
+				+ "]";
 	}
 
 }
